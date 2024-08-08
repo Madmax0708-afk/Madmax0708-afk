@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obtenir l'IP</title>
+</head>
+<body>
+    <h1>Votre adresse IP est : <span id="ip"></span></h1>
+
+    <script>
+        // Utilisation d'une API publique pour obtenir l'IP
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip').textContent = data.ip;
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+            });
+    </script>
+</body>
+</html>
